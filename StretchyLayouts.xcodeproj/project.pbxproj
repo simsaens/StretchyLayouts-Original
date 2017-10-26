@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D49508085BD6AB241A46EC3A /* Pods_StretchyLayouts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1700231BA0A40DA71676AADD /* Pods_StretchyLayouts.framework */; };
 		DB4D53EA1FA1A5F200DF6F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D53E91FA1A5F200DF6F63 /* AppDelegate.swift */; };
 		DB4D53EC1FA1A5F200DF6F63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D53EB1FA1A5F200DF6F63 /* ViewController.swift */; };
 		DB4D53EF1FA1A5F200DF6F63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D53ED1FA1A5F200DF6F63 /* Main.storyboard */; };
 		DB4D53F11FA1A5F200DF6F63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4D53F01FA1A5F200DF6F63 /* Assets.xcassets */; };
 		DB4D53F41FA1A5F200DF6F63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D53F21FA1A5F200DF6F63 /* LaunchScreen.storyboard */; };
+		DB4D53FC1FA1A9F200DF6F63 /* StretchyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D53FB1FA1A9F200DF6F63 /* StretchyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1700231BA0A40DA71676AADD /* Pods_StretchyLayouts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StretchyLayouts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3563CA599D19B5EFCDFFF6 /* Pods-StretchyLayouts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StretchyLayouts.release.xcconfig"; path = "Pods/Target Support Files/Pods-StretchyLayouts/Pods-StretchyLayouts.release.xcconfig"; sourceTree = "<group>"; };
+		C5FAB5B1C45C181E004184E6 /* Pods-StretchyLayouts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StretchyLayouts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StretchyLayouts/Pods-StretchyLayouts.debug.xcconfig"; sourceTree = "<group>"; };
 		DB4D53E61FA1A5F200DF6F63 /* StretchyLayouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StretchyLayouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4D53E91FA1A5F200DF6F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB4D53EB1FA1A5F200DF6F63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		DB4D53F01FA1A5F200DF6F63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB4D53F31FA1A5F200DF6F63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB4D53F51FA1A5F200DF6F63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB4D53FB1FA1A9F200DF6F63 /* StretchyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49508085BD6AB241A46EC3A /* Pods_StretchyLayouts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		926C69EBBF20E176D3B9BC9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1700231BA0A40DA71676AADD /* Pods_StretchyLayouts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94D442B38F054FCFB31EAE1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5FAB5B1C45C181E004184E6 /* Pods-StretchyLayouts.debug.xcconfig */,
+				3B3563CA599D19B5EFCDFFF6 /* Pods-StretchyLayouts.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DB4D53DD1FA1A5F200DF6F63 = {
 			isa = PBXGroup;
 			children = (
 				DB4D53E81FA1A5F200DF6F63 /* StretchyLayouts */,
 				DB4D53E71FA1A5F200DF6F63 /* Products */,
+				94D442B38F054FCFB31EAE1A /* Pods */,
+				926C69EBBF20E176D3B9BC9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +82,7 @@
 			children = (
 				DB4D53E91FA1A5F200DF6F63 /* AppDelegate.swift */,
 				DB4D53EB1FA1A5F200DF6F63 /* ViewController.swift */,
+				DB4D53FB1FA1A9F200DF6F63 /* StretchyViewController.swift */,
 				DB4D53ED1FA1A5F200DF6F63 /* Main.storyboard */,
 				DB4D53F01FA1A5F200DF6F63 /* Assets.xcassets */,
 				DB4D53F21FA1A5F200DF6F63 /* LaunchScreen.storyboard */,
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB4D53F81FA1A5F200DF6F63 /* Build configuration list for PBXNativeTarget "StretchyLayouts" */;
 			buildPhases = (
+				4F5205B7A0E754C753D6B641 /* [CP] Check Pods Manifest.lock */,
 				DB4D53E21FA1A5F200DF6F63 /* Sources */,
 				DB4D53E31FA1A5F200DF6F63 /* Frameworks */,
 				DB4D53E41FA1A5F200DF6F63 /* Resources */,
+				378EB8243D5467D513F10A9E /* [CP] Embed Pods Frameworks */,
+				3431F64083C301C860BA17A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +161,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3431F64083C301C860BA17A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StretchyLayouts/Pods-StretchyLayouts-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		378EB8243D5467D513F10A9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StretchyLayouts/Pods-StretchyLayouts-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StretchyLayouts/Pods-StretchyLayouts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F5205B7A0E754C753D6B641 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StretchyLayouts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB4D53E21FA1A5F200DF6F63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DB4D53EC1FA1A5F200DF6F63 /* ViewController.swift in Sources */,
+				DB4D53FC1FA1A9F200DF6F63 /* StretchyViewController.swift in Sources */,
 				DB4D53EA1FA1A5F200DF6F63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +357,7 @@
 		};
 		DB4D53F91FA1A5F200DF6F63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5FAB5B1C45C181E004184E6 /* Pods-StretchyLayouts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +373,7 @@
 		};
 		DB4D53FA1FA1A5F200DF6F63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3563CA599D19B5EFCDFFF6 /* Pods-StretchyLayouts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
