@@ -22,6 +22,8 @@ class StretchyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .gray
+        
         imageView.image = UIImage(named: "Header")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
