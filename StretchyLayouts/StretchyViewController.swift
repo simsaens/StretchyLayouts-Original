@@ -37,9 +37,6 @@ class StretchyViewController: UIViewController {
                     """
         infoText.text = text + text + text
         
-        let backing = UIView()
-        backing.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1235740449, blue: 0.2699040081, alpha: 1)
-        
         view.addSubview(scrollView)
         
         scrollView.contentInsetAdjustmentBehavior = .never
@@ -47,11 +44,18 @@ class StretchyViewController: UIViewController {
         let imageContainer = UIView()
         imageContainer.backgroundColor = .darkGray
         
+        let textContainer = UIView()
+        textContainer.backgroundColor = .clear
+        
+        let textBacking = UIView()
+        textBacking.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1235740449, blue: 0.2699040081, alpha: 1)
+        
         scrollView.addSubview(imageContainer)
-        scrollView.addSubview(backing)
+        scrollView.addSubview(textBacking)
+        scrollView.addSubview(textContainer)
         scrollView.addSubview(imageView)
         
-        backing.addSubview(infoText)
+        textContainer.addSubview(infoText)
         
         scrollView.snp.makeConstraints {
             make in
@@ -75,10 +79,10 @@ class StretchyViewController: UIViewController {
             
             make.top.equalTo(view).priority(.high)
             make.top.lessThanOrEqualTo(view).priority(.medium)
-            make.bottom.equalTo(backing.snp.top)
+            make.bottom.equalTo(textContainer.snp.top)
         }
-    
-        backing.snp.makeConstraints {
+        
+        textContainer.snp.makeConstraints {
             make in
             
             make.top.equalTo(imageContainer.snp.bottom)
@@ -86,10 +90,18 @@ class StretchyViewController: UIViewController {
             make.bottom.equalTo(scrollView)
         }
         
+        textBacking.snp.makeConstraints {
+            make in
+            
+            make.left.right.equalTo(view)
+            make.top.equalTo(textContainer)
+            make.bottom.equalTo(view)
+        }
+        
         infoText.snp.makeConstraints {
             make in
             
-            make.edges.equalTo(backing).inset(14)
+            make.edges.equalTo(textContainer).inset(14)
         }
     }
 }
