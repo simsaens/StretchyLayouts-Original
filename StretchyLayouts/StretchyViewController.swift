@@ -9,11 +9,12 @@
 import UIKit
 import SnapKit
 
-class StretchyViewController: UIViewController {
+class StretchyViewController: UIViewController, UIScrollViewDelegate {
 
     private let scrollView = UIScrollView()
     private let infoText = UILabel()
     private let imageView = UIImageView()
+    private let textContainer = UIView()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -23,6 +24,8 @@ class StretchyViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .gray
+        
+        scrollView.delegate = self
         
         imageView.image = UIImage(named: "Header")
         imageView.contentMode = .scaleAspectFill
@@ -43,8 +46,6 @@ class StretchyViewController: UIViewController {
         
         let imageContainer = UIView()
         imageContainer.backgroundColor = .darkGray
-        
-        let textContainer = UIView()
         textContainer.backgroundColor = .clear
         
         let textBacking = UIView()
@@ -110,5 +111,35 @@ class StretchyViewController: UIViewController {
         
         scrollView.scrollIndicatorInsets = view.safeAreaInsets
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom, right: 0)
+    }
+    
+    //MARK: - Scroll View Delegate
+    
+    private var previousStatusBarHidden = false
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if previousStatusBarHidden != shouldHideStatusBar {
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                self.setNeedsStatusBarAppearanceUpdate()
+            })
+            
+            previousStatusBarHidden = shouldHideStatusBar
+        }
+    }
+    
+    //MARK: - Status Bar Appearance
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return shouldHideStatusBar
+    }
+    
+    private var shouldHideStatusBar: Bool {
+        let frame = textContainer.convert(textContainer.bounds, to: nil)
+        return frame.minY < view.safeAreaInsets.top
     }
 }
