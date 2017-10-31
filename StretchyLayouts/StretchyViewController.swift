@@ -70,11 +70,11 @@ class StretchyViewController: UIViewController {
         imageView.snp.makeConstraints {
             make in
             
-            make.height.greaterThanOrEqualTo(imageContainer.snp.height)
             make.left.right.equalTo(view)
             
             make.top.equalTo(view).priority(.high)
-            make.top.lessThanOrEqualTo(view).priority(.medium)
+            make.height.greaterThanOrEqualTo(imageContainer.snp.height).priority(.required)
+            
             make.bottom.equalTo(backing.snp.top)
         }
     
