@@ -104,4 +104,11 @@ class StretchyViewController: UIViewController {
             make.edges.equalTo(textContainer).inset(14)
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        scrollView.scrollIndicatorInsets = view.safeAreaInsets
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom, right: 0)
+    }
 }
