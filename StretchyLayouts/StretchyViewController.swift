@@ -43,7 +43,13 @@ class StretchyViewController: UIViewController {
         view.addSubview(scrollView)
         
         scrollView.contentInsetAdjustmentBehavior = .never
+        
+        let imageContainer = UIView()
+        imageContainer.backgroundColor = .darkGray
+        
+        scrollView.addSubview(imageContainer)
         scrollView.addSubview(backing)
+        scrollView.addSubview(imageView)
         
         backing.addSubview(infoText)
         
@@ -53,16 +59,19 @@ class StretchyViewController: UIViewController {
             make.edges.equalTo(view)
         }
         
-        let imageContainer = UIView()
-        imageContainer.backgroundColor = .darkGray        
-        scrollView.addSubview(imageContainer)
-        
         imageContainer.snp.makeConstraints {
             make in
             
             make.top.equalTo(scrollView)
             make.left.right.equalTo(view)
             make.height.equalTo(imageContainer.snp.width).multipliedBy(0.7)
+        }
+        
+        imageView.snp.makeConstraints {
+            make in
+            
+            make.top.left.right.equalTo(view)
+            make.bottom.equalTo(backing.snp.top)
         }
     
         backing.snp.makeConstraints {
